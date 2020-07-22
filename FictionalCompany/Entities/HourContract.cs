@@ -8,6 +8,9 @@ namespace FictionalCompany.Entities
         public double ValuePerHour { get; set; }
         public int Hours { get; set; }
 
+        public HourContract()
+        {
+        }
         public HourContract(DateTime date, double valuePerHours, int hours)
         {
             Date = date;
@@ -17,7 +20,7 @@ namespace FictionalCompany.Entities
 
         public double TotalValue()
         {
-            return ValuePerHour * Hours;
+            return Hours * ValuePerHour;
         }
     }
 }

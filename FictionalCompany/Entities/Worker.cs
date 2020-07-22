@@ -1,7 +1,5 @@
 ﻿using FictionalCompany.Entities.Enums;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FictionalCompany.Entities
 {
@@ -11,7 +9,7 @@ namespace FictionalCompany.Entities
         public WorkerLevel Level { get; set; }
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
-        public List<HourContract> Contract = new List<HourContract>();
+        public List<HourContract> Contract { get; private set; } = new List<HourContract>();
 
         public Worker()
         {
@@ -22,6 +20,7 @@ namespace FictionalCompany.Entities
             Level = level;
             BaseSalary = baseSalary;
             Department = department;
+            Contract = new List<HourContract>();
         }
         public void AddContract(HourContract contract)
         {
